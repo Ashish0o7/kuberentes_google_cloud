@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/github/forks/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/license/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/stars/Ashish0o7/code-editor"> 
+<img src="https://img.shields.io/github/forks/Ashish0o7/code-editor"> <img src="https://img.shields.io/github/license/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/stars/Ashish0o7/code-editor"> 
 
 # Deploy an Application to GKE(Google Kubernetes Engine) 
 ### Tech used:
