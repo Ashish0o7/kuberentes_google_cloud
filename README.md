@@ -107,10 +107,44 @@
     ```
 - [x] Check the external IP of the service in the browser.
 
+
+- [x] Ingress for this cluster ```ingress.yml```
+  ```yaml
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+  name: nodeapp-ingress
+  annotations:
+  kubernetes.io/ingress.class: "gce"
+  spec:
+  rules:
+  - http:
+  paths:
+    - path: /nodeapp
+    pathType: Prefix
+    backend:
+    service:
+    name: nodeapp-load-balancer-service
+    port:
+    number: 80
+  
+  ```
+
+- [x] Apply ingress
+    ```sh
+    kubectl apply -f ingress.yml
+    ``` 
+
+- [x] Get Ingress IP
+    ```sh
+    kubectl get ingress
+    ``` 
 ### Cleanup
 ```sh
 kubectl delete -f deploy.yml
 kubectl delete -f service.yml
 ```
+
+
 
 > Delete your GKE Cluster from GCP Console.
