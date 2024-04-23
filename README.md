@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/github/forks/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/license/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/stars/tush-tr/DevOps-Projects"> <a href="https://twitter.com/tush_tr604" target="blank"><img src="https://img.shields.io/twitter/follow/tush_tr604?logo=twitter&style=flat" alt="tush_tr604" /></a>
+<img src="https://img.shields.io/github/forks/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/license/tush-tr/DevOps-Projects"> <img src="https://img.shields.io/github/stars/Ashish0o7/code-editor"> 
 
 # Deploy an Application to GKE(Google Kubernetes Engine) 
 ### Tech used:
@@ -32,7 +32,7 @@
     ```
 - [x] Build the Docker image
     ```sh
-    docker build -t us.gcr.io/<PROJECT_ID>/imagename:tag .
+    docker build -t <your docker hub username>/<PROJECT_ID>/imagename:tag .
     ```
 - [x] Authenticate to GCR
     ```sh
@@ -40,11 +40,11 @@
     ```
 - [x] Push docker image to GCR(Google Container Registry)
     ```sh
-    docker push us.gcr.io/<PROJECT_ID>/imagename:tag
+    docker push <your docker hub username>/<PROJECT_ID>/imagename:tag
     ```
 - [x] Test the application using docker.
     ```sh
-    docker run -d -p 3000:80 us.gcr.io/<PROJECT_ID>/imagename:tag
+    docker run -d -p 3000:80 <your docker hub username>/<PROJECT_ID>/imagename:tag
     ```
 - [x] Write kubernetes manifest file for deployment. ```deploy.yml```
     ```yml
@@ -70,7 +70,7 @@
         spec:
           containers:
             - name: nodecontainer
-              image: us.gcr.io/<PROJECT_ID>/imagename:tag
+              image: <your docker hub username>/<PROJECT_ID>/imagename:tag
               ports:
                 - containerPort: 80
     ```
